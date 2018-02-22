@@ -1,10 +1,10 @@
 // Get references to the table body, input fields, and button.
 
 var $tbody = document.querySelector("tbody");
-var $stateInput = document.querySelector("#state");
-var $cityInput = document.querySelector("#city");
-var $countryInput = document.querySelector("#country");
 var $dateInput = document.querySelector("#datetime");
+var $cityInput = document.querySelector("#city");
+var $stateInput = document.querySelector("#state");
+var $countryInput = document.querySelector("#country");
 var $shapeInput = document.querySelector("#shape");
 var $searchBtn = document.querySelector("#search");
 
@@ -31,15 +31,15 @@ function renderTable() {
 //Format search by removing leading & trailing whitespace, & set to lowercase
 function handleSearchButtonClick() {
 	var filterDate = $dateInput.value.trim();
-	var filterState = $stateInput.value.trim().toLowerCase();
 	var filterCity = $cityInput.value.trim().toLowerCase();
+	var filterState = $stateInput.value.trim().toLowerCase();
 	var filterCountry = $countryInput.value.trim().toLowerCase();
 	var filterShape = $shapeInput.value.trim().toLowerCase();
 //Set filteredTable to an array of all data where the fields match the filter
 	filteredTable = dataSet.filter(function (event) {
 		var eventDate = event.datetime;
-		var eventState = event.state.toLowerCase();
 		var eventCity = event.city.toLowerCase();
+		var eventState = event.state.toLowerCase();
 		var eventCountry = event.country.toLowerCase();
 		var eventShape = event.shape.toLowerCase();
 		
