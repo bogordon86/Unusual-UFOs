@@ -1,0 +1,26 @@
+body {
+    background-color: #626567;
+    background-image: url("hd_space_nebula.jpg");
+    background-position: fixed;
+
+}
+h1 {
+	color: #00ff00;
+	text-align: center;
+}
+th {
+	color: #00ff00;
+	font-size: 15px;
+}
+
+td {
+	color: #F5F5F5;
+}
+
+p {
+	color: #DCDCDC;
+}
+
+form-group {
+	background-color: transparent;
+}

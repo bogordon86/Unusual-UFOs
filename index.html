@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>UFO Sightings</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <h1 class="header">UFO Sightings</h1>
+	<p> Brought to you by ALIENS-R-REAL.com </p>
+	<form>
+    <div class="form-group">
+		<div class="col-md-4">
+          <input type="text" class="form-control" id="datetime" placeholder="Search by Date">
+		</div>
+		<div class="col-md-4">
+		  <input type="text" class="form-control" id="city" placeholder="Search by City">
+		</div>
+		<div class="col-md-4">
+		  <input type="text" class="form-control" id="state" placeholder="Search by State">
+		</div>
+		<div class="col-md-4">
+          <input type="text" class="form-control" id="country" placeholder="Search by Country">
+		</div>
+		<div class="col-md-4">
+          <input type="text" class="form-control" id="shape" placeholder="Search by Shape">
+		</div>
+		<div class="col-md-12">
+          <button type="submit" class="search" id="search">Click to Search</button>
+		</div>
+      
+    </div>
+	</form>
+	
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table-bordered">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>City</th>
+              <th>State</th>
+              <th>Country</th>
+              <th>Shape</th>
+			  <th>Duration</th>
+              <th>Comments</th>
+            </tr>
+          </thead>
+          <tbody class="tbody">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="Data/data.js"></script>
+  <script src="js/index.js"></script>
+</body>
+
+</html>
