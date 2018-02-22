@@ -5,8 +5,8 @@ var $stateInput = document.querySelector("#state");
 var $cityInput = document.querySelector("#city");
 var $countryInput = document.querySelector("#country");
 var $dateInput = document.querySelector("#datetime");
-var $searchBtn = document.querySelector("#search");
 var $shapeInput = document.querySelector("#shape");
+var $searchBtn = document.querySelector("#search");
 
 // Add event listener for search button
 $searchBtn.addEventListener("click", handleSearchButtonClick);
@@ -28,29 +28,36 @@ function renderTable() {
 		}
 	}
 }
-
+//Format search by removing leading & trailing whitespace, & set to lowercase
 function handleSearchButtonClick() {
-	var filterDate = $dateInput.value.trim().toLowerCase();
+	var filterDate = $dateInput.value.trim();
 	var filterState = $stateInput.value.trim().toLowerCase();
 	var filterCity = $cityInput.value.trim().toLowerCase();
 	var filterCountry = $countryInput.value.trim().toLowerCase();
 	var filterShape = $shapeInput.value.trim().toLowerCase();
-	
-	filteredTable = dataSet.filter(function(event) {
-		var eventDate = event.datetime.substring(0, filterDate.length).toLowerCase();
-		var eventState = event.state.substring(0, filterState.length).toLowerCase();
-		var eventCity = event.city.substring(0, filterCity.length).toLowerCase();
-		var eventCountry = event.country.substring(0, filterCountry.length).toLowerCase();
-		var eventShape = event.shape.substring(0, filterShape.length).toLowerCase();
+//Set filteredTable to an array of all data where the fields match the filter
+	filteredTable = dataSet.filter(function (event) {
+		var eventDate = event.datetime;
+		var eventState = event.state.toLowerCase();
+		var eventCity = event.city.toLowerCase();
+		var eventCountry = event.country.toLowerCase();
+		var eventShape = event.shape.toLowerCase();
 		
-		if (eventDate === filterDate && eventState === filterState && eventCity === filterCity&& eventCountry === filterCountry && eventShape === filterShape) {
-			return true;
+		if
+			((eventDate === filterDate || filterDate == "")
+            && (eventCity === filterCity || filterCity == "")
+            && (eventState === filterState || filterState == "")
+            && (eventCountry === filterCountry || filterCountry == "")
+            && (eventShape === filterShape || filterShape == ""))
+			{
+            return true;
 		}
-		return false;
-	});
+            return false;
+    });
+		
 	renderTable();
 }
 
-
+// Provides the initial render of the page on opening
 renderTable();
 	
